@@ -51,6 +51,4 @@ void MainGame::processInput()
 			break;
 		}
 	}
-
-	SDL_PollEvent
 }
