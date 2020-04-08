@@ -1,6 +1,5 @@
 #include "Commons.h"
 #include "MainGame.h"
-#include <string>
 
 int main(int argc, char *argv[])
 {
