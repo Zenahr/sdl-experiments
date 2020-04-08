@@ -28,6 +28,7 @@ void MainGame::initSystems()
 	_window = SDL_CreateWindow("Zenahr Window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, _screenWidth, _screenHeight, SDL_WINDOW_OPENGL);
 }
 
+// Main Game Loop
 void MainGame::gameLoop()
 {
 	while (_gameState != GameState::EXIT)
@@ -38,5 +39,18 @@ void MainGame::gameLoop()
 
 void MainGame::processInput()
 {
+	SDL_Event evnt;
+	
+	// Pass event by reference
+	while (SDL_PollEvent(&evnt))
+	{
+		switch (evnt.type)
+		{
+		case SDL_QUIT:
+			_gameState = GameState::EXIT;
+			break;
+		}
+	}
 
+	SDL_PollEvent
 }
