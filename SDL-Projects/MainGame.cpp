@@ -1,10 +1,7 @@
 #include <GL\glew.h>
 #include "Commons.h"
 #include "MainGame.h"
-#include <string>
-#include <windows.h>
-#include <GL\GL.h>
-#include <GL\GLU.h>
+
 
 
 void fatalError(std::string error)
