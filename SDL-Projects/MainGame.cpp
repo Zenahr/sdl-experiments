@@ -65,7 +65,7 @@ void MainGame::initSystems()
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
 	// 0 - 225 <=> 0.0f - 1.0f (RGBA)
-	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+	glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
 }
 
 // Main Game Loop
@@ -100,8 +100,8 @@ void MainGame::processInput()
 // Rendering process
 void MainGame::drawGame()
 {
-	// glClearDepth(1.0);
-	// glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glClearDepth(1.0);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 
 
