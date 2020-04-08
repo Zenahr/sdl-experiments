@@ -1,6 +1,15 @@
 #include "Commons.h"
 #include "MainGame.h"
 
+void fatalError(std::string error)
+{
+	std::cout << error << std::endl;
+	std::cout << "Enter any key to quit...";
+	std::cin.get();
+	SDL_Quit();
+}
+
+
 // Constructor
 MainGame::MainGame()
 {
@@ -31,6 +40,12 @@ void MainGame::initSystems()
 	if (_window == nullptr)
 	{
 		fatalError("SDL Window could not be created!");
+	}
+
+	SDL_GLContext glContext = SDL_GL_CreateContext(_window);
+	if (glContext == nullptr)
+	{
+		fatalError("SDL_GL context could not be created!")
 	}
 }
 
