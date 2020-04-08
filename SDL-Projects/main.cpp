@@ -8,7 +8,6 @@ void fatalError(std::string error)
 	std::cout << "Enter any key to quit...";
 	std::cin.get();
 	SDL_Quit();
-
 }
 
 int main(int argc, char *argv[])

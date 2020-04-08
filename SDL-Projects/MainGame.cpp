@@ -27,6 +27,11 @@ void MainGame::initSystems()
 {
 	SDL_Init(SDL_INIT_EVERYTHING);
 	_window = SDL_CreateWindow("Zenahr Window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, _screenWidth, _screenHeight, SDL_WINDOW_OPENGL);
+
+	if (_window == nullptr)
+	{
+		fatalError("SDL Window could not be created!");
+	}
 }
 
 // Main Game Loop
