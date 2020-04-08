@@ -1,3 +1,4 @@
+#include "Commons.h"
 #include "MainGame.h"
 
 // Constructor
@@ -48,6 +49,9 @@ void MainGame::processInput()
 		{
 		case SDL_QUIT:
 			_gameState = GameState::EXIT;
+			break;
+		case SDL_MOUSEMOTION:
+			std::cout << "X: " << evnt.motion.x << " Y: " << evnt.motion.y << std::endl;
 			break;
 		}
 	}
