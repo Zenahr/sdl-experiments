@@ -65,7 +65,7 @@ void MainGame::initSystems()
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
 	// 0 - 225 <=> 0.0f - 1.0f (RGBA)
-	glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
+	glClearColor(1.0f, 0.7f, 1.0f, 1.0f);
 }
 
 // Main Game Loop
@@ -103,7 +103,16 @@ void MainGame::drawGame()
 	glClearDepth(1.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+	// Not really good to use it this way (immediate mode)
+	glEnableClientState(GL_COLOR_ARRAY);
+	glBegin(GL_TRIANGLES);
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glVertex2f(0, 0);
+	glVertex2f(0, 500);
+	glVertex2f(500, 500);
 
+
+	glEnd();
 
 	SDL_GL_SwapWindow(_window);
 
