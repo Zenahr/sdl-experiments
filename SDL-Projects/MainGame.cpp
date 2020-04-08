@@ -1,9 +1,10 @@
+#include <GL\glew.h>
 #include "Commons.h"
 #include "MainGame.h"
 #include <string>
 #include <windows.h>
-#include <gl/gl.h>
-#include <gl/glu.h>
+#include <GL\GL.h>
+#include <GL\GLU.h>
 
 
 void fatalError(std::string error)
@@ -40,7 +41,7 @@ void MainGame::run()
 void MainGame::initSystems()
 {
 	SDL_Init(SDL_INIT_EVERYTHING);
-	_window = SDL_CreateWindow("Zenahr Window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, _screenWidth, _screenHeight, SDL_WINDOW_MAXIMIZED);
+	_window = SDL_CreateWindow("Zenahr Window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, _screenWidth, _screenHeight, SDL_WINDOW_OPENGL);
 
 	if (_window == nullptr)
 	{
@@ -53,6 +54,12 @@ void MainGame::initSystems()
 		fatalError("SDL_GL context could not be created!");
 	}
 
+	// For additional hardware support. (Optional)
+	GLenum error = glewInit();
+	if (error != GLEW_OK)
+	{
+		fatalError("Could not initialize GLEW!");
+	}
 	
 	// Stops flickering
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
