@@ -6,6 +6,7 @@ MainGame::MainGame()
 	_window = nullptr;
 	_screenWidth = 1024;
 	_screenHeight = 768;
+	_gameState = GameState::PLAY;
 }
 
 // Desctructor
@@ -18,6 +19,7 @@ MainGame::~MainGame()
 void MainGame::run()
 {
 	initSystems();
+	gameLoop();
 }
 
 void MainGame::initSystems()
@@ -28,8 +30,12 @@ void MainGame::initSystems()
 
 void MainGame::gameLoop()
 {
-
+	while (_gameState != GameState::EXIT)
+	{
+		processInput();
+	}
 }
+
 void MainGame::processInput()
 {
 

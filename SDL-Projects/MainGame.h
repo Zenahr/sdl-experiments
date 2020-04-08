@@ -2,6 +2,8 @@
 #include "SDL.h"
 #include "SDL_opengl.h"
 
+enum class GameState {PLAY, EXIT};
+
 class MainGame
 {
 public:
@@ -19,5 +21,6 @@ private:
 	SDL_Window* _window;
 	int _screenWidth;
 	int _screenHeight;
+	GameState _gameState;
 };
 
