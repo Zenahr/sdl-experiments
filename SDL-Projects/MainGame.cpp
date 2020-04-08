@@ -45,8 +45,16 @@ void MainGame::initSystems()
 	SDL_GLContext glContext = SDL_GL_CreateContext(_window);
 	if (glContext == nullptr)
 	{
-		fatalError("SDL_GL context could not be created!")
+		fatalError("SDL_GL context could not be created!");
 	}
+
+	// For additional hardware support. (Optional)
+	GLenum error = glewInit();
+	if (error != GLEW_OK)
+	{
+		fatalError("Could not initialize GLEW!")
+	}
+
 }
 
 // Main Game Loop
