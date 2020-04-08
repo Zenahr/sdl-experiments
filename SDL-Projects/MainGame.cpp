@@ -25,3 +25,12 @@ void MainGame::initSystems()
 	SDL_Init(SDL_INIT_EVERYTHING);
 	_window = SDL_CreateWindow("Zenahr Window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, _screenWidth, _screenHeight, SDL_WINDOW_OPENGL);
 }
+
+void MainGame::gameLoop()
+{
+
+}
+void MainGame::processInput()
+{
+
+}
